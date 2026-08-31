@@ -1,0 +1,20 @@
+{
+  "appId": "com.flagshiplens.pwa",
+  "appName": "FlagshipLens",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https",
+    "iosScheme": "capacitor"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 3000,
+      "backgroundColor": "#1976d2",
+      "showSpinner": true
+    },
+    "StatusBar": {
+      "style": "dark",
+      "backgroundColor": "#1976d2"
+    }
+  }
+}

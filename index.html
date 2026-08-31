@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FlagshipLens PWA - Mobile App">
+    <meta name="theme-color" content="#1976d2">
+    <title>FlagshipLens</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="assets/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🚩 FlagshipLens</h1>
+            <p>Your Progressive Web App</p>
+        </header>
+        <main>
+            <section>
+                <h2>Welcome to FlagshipLens</h2>
+                <p>This app is ready to be installed on your mobile device.</p>
+                <button onclick="installApp()" id="installBtn" style="display:none;">
+                    📲 Install App
+                </button>
+                <div id="status"></div>
+            </section>
+            <section>
+                <h3>Features</h3>
+                <ul>
+                    <li>✅ Works Offline</li>
+                    <li>✅ Installable on Mobile</li>
+                    <li>✅ Fast Loading</li>
+                    <li>✅ App-like Experience</li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2026 FlagshipLens. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
