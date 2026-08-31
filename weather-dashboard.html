@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FlagshipLens Weather Dashboard - Real-time Weather Data">
+    <meta name="theme-color" content="#1976d2">
+    <title>FlagshipLens Weather Dashboard</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="assets/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icon-192.png">
+    <link rel="stylesheet" href="weather-styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🌤️ FlagshipLens Weather Dashboard</h1>
+            <p>Real-time Weather Information</p>
+        </header>
+
+        <main>
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="cityInput" 
+                        placeholder="Enter city name..." 
+                        class="search-input"
+                    >
+                    <button onclick="searchWeather()" class="search-btn">🔍 Search</button>
+                    <button onclick="getLocationWeather()" class="location-btn">📍 My Location</button>
+                </div>
+                <div id="error" class="error-message"></div>
+            </section>
+
+            <!-- Current Weather Section -->
+            <section id="currentWeather" class="current-weather hidden">
+                <div class="weather-card">
+                    <div class="header-info">
+                        <div>
+                            <h2 id="cityName">-</h2>
+                            <p id="dateTime">-</p>
+                        </div>
+                        <div class="temperature-section">
+                            <span id="temperature" class="temperature">--°C</span>
+                            <img id="weatherIcon" src="" alt="Weather Icon" class="weather-icon">
+                        </div>
+                    </div>
+
+                    <div class="description-section">
+                        <p id="weatherDescription">-</p>
+                        <p id="feels-like">Feels like: --°C</p>
+                    </div>
+
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">💨 Wind Speed</span>
+                            <span id="windSpeed" class="detail-value">-- m/s</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">💧 Humidity</span>
+                            <span id="humidity" class="detail-value">-- %</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">🌡️ Pressure</span>
+                            <span id="pressure" class="detail-value">-- hPa</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">👁️ Visibility</span>
+                            <span id="visibility" class="detail-value">-- km</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">⬆️ Max Temp</span>
+                            <span id="tempMax" class="detail-value">--°C</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">⬇️ Min Temp</span>
+                            <span id="tempMin" class="detail-value">--°C</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Forecast Section -->
+            <section id="forecastSection" class="forecast-section hidden">
+                <h3>📅 5-Day Forecast</h3>
+                <div id="forecastContainer" class="forecast-container">
+                    <!-- Forecast cards will be inserted here -->
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <!-- Welcome State -->
+            <section id="welcome" class="welcome-section">
+                <div class="welcome-card">
+                    <h2>👋 Welcome to Weather Dashboard</h2>
+                    <p>Search for a city or use your current location to get weather information.</p>
+                    <div class="feature-list">
+                        <div class="feature">
+                            <span>🌡️</span>
+                            <p>Current weather conditions</p>
+                        </div>
+                        <div class="feature">
+                            <span>📊</span>
+                            <p>Detailed weather metrics</p>
+                        </div>
+                        <div class="feature">
+                            <span>📅</span>
+                            <p>5-day forecast</p>
+                        </div>
+                        <div class="feature">
+                            <span>📍</span>
+                            <p>Location-based weather</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Data provided by OpenWeatherMap API | © 2026 FlagshipLens Weather Dashboard</p>
+        </footer>
+    </div>
+
+    <script src="weather-app.js"></script>
+</body>
+</html>
